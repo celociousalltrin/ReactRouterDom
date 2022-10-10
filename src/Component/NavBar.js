@@ -8,12 +8,18 @@ const NavBar = () => {
     };
   };
   return (
-    <nav>
+    <nav className="primary__Nav">
       <NavLink end to="/" style={NavLinkStyles}>
         Home
       </NavLink>
       <NavLink to="/about" style={NavLinkStyles}>
         About
+      </NavLink>
+      <NavLink to="/product" style={NavLinkStyles}>
+        Product
+      </NavLink>
+      <NavLink to="/users" style={NavLinkStyles}>
+       User
       </NavLink>
     </nav>
   );

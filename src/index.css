@@ -12,16 +12,23 @@ code {
     monospace;
 }
 
-nav {
+.primary__Nav {
   background-color: #000;
   padding: 16px 32px;
 }
 
-nav a {
+.primary__Nav > a {
   margin-right: 16px;
   text-decoration: none;
   color: #ff0;
 }
+
+.Secondary__Nav > a {
+  color: rgb(89, 47, 255);
+  margin-right: 16px;
+  text-decoration: none;
+}
+
 /* 
 nav a.active {
   font-weight:bolder;
