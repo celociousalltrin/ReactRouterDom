@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { UseUserContext } from "../Utilities/Context";
 
 const NavBar = () => {
   const NavLinkStyles = ({ isActive }) => {
@@ -7,6 +8,9 @@ const NavBar = () => {
       fontWeight: isActive ? "bolder" : "normal",
     };
   };
+
+  const {person} = UseUserContext()
+
   return (
     <nav className="primary__Nav">
       <NavLink end to="/" style={NavLinkStyles}>
@@ -21,6 +25,16 @@ const NavBar = () => {
       <NavLink to="/users" style={NavLinkStyles}>
        User
       </NavLink>
+      <NavLink to="/profile" style={NavLinkStyles}>
+       Profile
+      </NavLink>
+      
+      {person.isGuest && (
+            <NavLink to="/signIn" style={NavLinkStyles}>
+            SignIn
+           </NavLink>
+      )}
+
     </nav>
   );
 };

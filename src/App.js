@@ -1,9 +1,12 @@
 import Navigation from "./Component/Navigation";
+import { UserContextProvider } from "./Utilities/Context";
 
 function App() {
   return (
     <div>
-<Navigation />
+      <UserContextProvider>
+        <Navigation />
+      </UserContextProvider>
     </div>
   );
 }

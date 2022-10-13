@@ -9,8 +9,11 @@ import New from "../Pages/NestedPages.js/New";
 import Users from "../Pages/Users";
 import DetailPage from "../Pages/DetailPage";
 import Admin from "../Pages/Admin";
+import Profile from "../Pages/Profile";
+import SignIn from "../Pages/SignIn";
 import { Route, Routes } from "react-router-dom";
 import NavBar from "./NavBar";
+import RequireAuth from "../Utilities/RequireAuth";
 
 const Navigation = () => {
   return (
@@ -29,6 +32,15 @@ const Navigation = () => {
           <Route path=":userId" element={<DetailPage />} />
           <Route path="admin" element={<Admin />} />
         </Route>
+        <Route
+          path="profile"
+          element={
+            <RequireAuth>
+              <Profile />
+            </RequireAuth>
+          }
+        />
+        <Route path="signIn" element={<SignIn />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </>
