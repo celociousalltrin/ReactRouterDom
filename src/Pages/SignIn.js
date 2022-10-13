@@ -16,7 +16,7 @@ const SignIn = () => {
   return (
     <div>
       <label>
-        userName:
+        UserName:
         <input type="text" onChange={(e) => setUser(e.target.value)} />
       </label>
       <button onClick={handleClick}>Login</button>
